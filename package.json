@@ -1,0 +1,28 @@
+{
+  "name": "qq-web-group-kit",
+  "private": true,
+  "description": "提供了网页版的 QQ 群管理功能，提供接口文档。通过扫码登录 QQ 后，可以查看群列表、群成员信息，以及进行一些群管理操作（demo）。",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Steven-Qiang/QQ-WebGroupKit.git"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm --filter=@app/frontend build && pnpm --filter=@app/backend build",
+    "start": "pnpm --filter=\"@app/backend\" start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "pnpm -r typecheck",
+    "prettier": "prettier --write \"apps/**/*.{vue,js,ts,json,html,css,scss,md,mjs}\""
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^7.7.0",
+    "cross-env": "^10.1.0",
+    "eslint": "^9.15.0",
+    "eslint-plugin-format": "^2.0.1",
+    "prettier": "^3.8.1"
+  }
+}
